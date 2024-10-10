@@ -1,0 +1,28 @@
+/* app/styles/Navbar.module.css */
+.navbar {
+    background-color: transparent;
+    padding: 1rem;
+    text-align: center;
+}
+
+.navbarLinks {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbarLinks li {
+    margin: 2rem;
+}
+
+.navbarLinks a {
+    color: #e2e2e2;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbarLinks a:hover {
+    color: #7c4dff;
+}

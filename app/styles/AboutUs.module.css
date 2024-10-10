@@ -1,0 +1,66 @@
+/* app/styles/AboutUs.module.css */
+.aboutus {
+    padding: 4rem 3rem;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+/* Card structure */
+.card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 2rem 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Image styling */
+.cardImage {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+/* Text section */
+.textSection h1,
+.textSection h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.textSection p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+    .cardContent {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .textSection {
+        text-align: left;
+        flex: 1;
+    }
+
+    .cardImage {
+        max-width: 40%;
+        margin-right: 2rem;
+    }
+}

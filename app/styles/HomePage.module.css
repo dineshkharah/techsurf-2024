@@ -1,0 +1,306 @@
+/* HomePage Styles */
+.homepage {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--background);
+}
+
+.homepage h1 {
+    font-size: 3rem;
+    color: var(--foreground);
+    margin-bottom: 2rem;
+}
+
+/* Teaser Section */
+.teaserSection {
+    margin-bottom: 4rem;
+}
+
+.teaser img {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.teaserText {
+    text-align: center;
+}
+
+.teaser h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.teaser p {
+    margin-bottom: 1rem;
+}
+
+.teaser a {
+    color: var(--accent);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.teaser a:hover {
+    color: #5e35ff;
+}
+
+/* Card Collection Section */
+
+.cardCollectionSection {
+    display: flex;
+    flex-direction: column;
+    /* This will stack the card collections vertically */
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.cardCollection {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cardCollection h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cardCollection p {
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--foreground);
+    color: var(--background);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 20rem;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px var(--accent);
+}
+
+/* Text and Image Section */
+.textImageSection {
+    margin-bottom: 4rem;
+}
+
+.textImageGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    color: #171717;
+}
+
+.textImageCard {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 20rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.textImageCard:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.textImageCard img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.textContent {
+    text-align: center;
+}
+
+.textContent h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.textContent p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Featured Articles */
+.featuredArticles h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.btn {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/* Extra */
+/* .homepage {
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--background);
+}
+
+.homepage h1 {
+    font-size: 3rem;
+    color: var(--foreground);
+    margin-bottom: 2rem;
+}
+
+.component {
+    margin-bottom: 4rem;
+}
+
+.teaser img {
+    width: 50%;
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.teaser h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.teaser p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.teaser a {
+    color: var(--accent);
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.teaser a:hover {
+    color: #5e35ff;
+}
+
+.textImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.textImage img {
+    width: 40%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.textImage h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.textImage p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+.cardCollection h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--foreground);
+    color: var(--background);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    width: 20rem;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.teaser:last-child {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.featuredArticles h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+} */

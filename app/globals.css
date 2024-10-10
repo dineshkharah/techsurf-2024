@@ -1,12 +1,16 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --accent: #7c4dff;
+  /* Define accent color */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --accent: #7c4dff;
+    /* Keep the same accent color in dark mode */
   }
 }
 
@@ -31,8 +35,30 @@ body {
 }
 
 a {
-  color: inherit;
+  color: var(--foreground);
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+  /* Use the accent color on hover */
+}
+
+button {
+  background-color: var(--accent);
+  /* Accent color for buttons */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #5e35ff;
+  /* Darker shade of accent on hover */
 }
 
 @media (prefers-color-scheme: dark) {
