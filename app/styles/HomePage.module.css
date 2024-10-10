@@ -3,6 +3,9 @@
     padding: 2rem;
     text-align: center;
     background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .homepage h1 {
@@ -10,6 +13,8 @@
     color: var(--foreground);
     margin-bottom: 2rem;
 }
+
+
 
 /* Teaser Section */
 .teaserSection {
