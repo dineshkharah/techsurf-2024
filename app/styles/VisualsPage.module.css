@@ -1,0 +1,18 @@
+.visualsPage {
+    padding: 2rem;
+    text-align: center;
+}
+
+.visualSection {
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #ccc;
+}
+
+.textImageGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    color: #171717;
+}
