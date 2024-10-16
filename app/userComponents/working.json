@@ -1,0 +1,190 @@
+{
+  "type": "page",
+  "children": [
+    {
+      "type": "container",
+      "children": [
+        {
+          "type": "image",
+          "props": {
+            "src": "https://placehold.co/600x400"
+          }
+        },
+        {
+          "type": "container",
+          "children": [
+            {
+              "type": "heading",
+              "props": {
+                "text": "Header"
+              }
+            },
+            {
+              "type": "text",
+              "props": {
+                "text": "Paragraph"
+              }
+            },
+            {
+              "type": "button",
+              "props": {
+                "text": "Click me",
+                "link": "https://www.google.com"
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "container",
+      "children": [
+        {
+          "type": "heading",
+          "props": {
+            "text": "Header"
+          }
+        },
+        {
+          "type": "text",
+          "props": {
+            "text": "Paragraph"
+          }
+        },
+
+        {
+          "type": "container",
+          "style": {
+            "display": "flex",
+            "flex-direction": "row",
+            "justify-content": "space-between"
+          },
+          "children": [
+            {
+              "type": "container",
+              "children": [
+                {
+                  "type": "image",
+                  "props": {
+                    "src": "https://placehold.co/600x400"
+                  }
+                },
+                {
+                  "type": "heading",
+                  "props": {
+                    "text": "card heading 1"
+                  }
+                },
+                {
+                  "type": "text",
+                  "props": {
+                    "text": "Paragraph 1"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "container",
+              "children": [
+                {
+                  "type": "image",
+                  "props": {
+                    "src": "https://placehold.co/600x400"
+                  }
+                },
+                {
+                  "type": "heading",
+                  "props": {
+                    "text": "card heading 2"
+                  }
+                },
+                {
+                  "type": "text",
+                  "props": {
+                    "text": "Paragraph 2"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "container",
+      "children": [
+        {
+          "type": "container",
+          "children": [
+            {
+              "type": "image",
+              "props": {
+                "src": "https://placehold.co/600x400"
+              }
+            },
+            {
+              "type": "heading",
+              "props": {
+                "text": "text and image heading 1"
+              }
+            },
+            {
+              "type": "text",
+              "props": {
+                "text": "text and image para 1"
+              }
+            }
+          ]
+        },
+        {
+          "type": "container",
+          "children": [
+            {
+              "type": "image",
+              "props": {
+                "src": "https://placehold.co/600x400"
+              }
+            },
+            {
+              "type": "heading",
+              "props": {
+                "text": "text and image heading 2"
+              }
+            },
+            {
+              "type": "text",
+              "props": {
+                "text": "text and image para 2"
+              }
+            }
+          ]
+        },
+        {
+          "type": "container",
+          "children": [
+            {
+              "type": "image",
+              "props": {
+                "src": "https://placehold.co/600x400"
+              }
+            },
+            {
+              "type": "heading",
+              "props": {
+                "text": "text and image heading 3"
+              }
+            },
+            {
+              "type": "text",
+              "props": {
+                "text": "text and image para 3"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "type": "page",
+  "children": [
+    {
+      "type": "container",
+      "children": [
+        {
+          "type": "heading",
+          "props": {
+            "text": "Header"
+          }
+        },
+        {
+          "type": "text",
+          "props": {
+            "text": "Paragraph"
+          }
+        },
+        {
+          "type": "container",
+          "children": [
+            {
+              "type": "container",
+              "children": [
+                {
+                  "type": "image",
+                  "props": {
+                    "src": "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+                  }
+                },
+                {
+                  "type": "heading",
+                  "props": {
+                    "text": "Header"
+                  }
+                },
+                {
+                  "type": "text",
+                  "props": {
+                    "text": "Paragraph"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
