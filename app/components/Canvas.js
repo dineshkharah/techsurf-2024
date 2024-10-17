@@ -3,47 +3,87 @@ import styles from '../styles/Canvas.module.css';
 import { components } from '../userComponents';
 import _, { get } from 'lodash';
 
-const Renderer = ({ node, data }) => {
-    const { type, props = {}, styles = {}, children = [] } = node;
+const Renderer = ({ node, data, onSelect, selectedUid }) => {
+    const { type, props = {}, styles = {}, children = [], uid } = node;
 
     const Component = components[type]?.component;
 
     if (!Component) return null;
 
+    const isSelected = uid === selectedUid;
+    const componentStyles = {
+        ...styles,
+        border: isSelected ? '2px solid yellow' : 'none',
+        cursor: 'pointer',
+    };
+
+    const handleSelect = (e) => {
+        e.stopPropagation();
+        onSelect(uid, styles);
+    };
+
     // Avoid wrapping in a div for specific types like 'container'
     if (type === 'container') {
         return (
-            <Component key={node.key || node.type} styles={styles}>
-                {children.map((child, index) => <Renderer key={index} node={child} data={data} />)}
-            </Component>
+            <div
+                key={uid}
+                style={componentStyles}
+                onClick={handleSelect}
+            >
+                {children.map((child, index) => (
+                    <Renderer
+                        key={index}
+                        node={child}
+                        data={data}
+                        onSelect={onSelect}
+                        selectedUid={selectedUid}
+                    />
+                ))}
+            </div>
         );
     }
 
     const processedData = processData(props, data);
-    // console.log(styles)
+
     return (
-        <div key={node.key || node.type} >
-            <Component {...processedData} styles={styles}>
-                {children.map((child, index) => <Renderer key={index} node={child} data={data} />)}
+        <div
+            key={uid}
+            style={componentStyles}
+            onClick={handleSelect}
+        >
+            <Component {...processedData} styles={componentStyles}>
+                {children.map((child, index) => (
+                    <Renderer
+                        key={index}
+                        node={child}
+                        data={data}
+                        onSelect={onSelect}
+                        selectedUid={selectedUid}
+                    />
+                ))}
             </Component>
         </div>
     );
 };
 
 const processData = (props, data) => {
-    const processedProps = {}
+    const processedProps = {};
     for (const key in props) {
         processedProps[key] = get(data, props[key]);
     }
 
     return processedProps;
-}
+};
 
-
-const Canvas = ({ jsonData }) => {
+const Canvas = ({ jsonData, onComponentSelect }) => {
     const [homePageContent, setHomePageContent] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    const [selectedUid, setSelectedUid] = useState(null);  // State to store selected component UID
 
+    const handleSelect = (uid, styles) => {
+        setSelectedUid(uid);  // Update the selected component UID
+        onComponentSelect(uid, styles);  // Pass UID and component styles to the right sidebar
+    };
 
     useEffect(() => {
         const fetchHomePageContent = async () => {
@@ -59,7 +99,6 @@ const Canvas = ({ jsonData }) => {
                     }
                 );
                 const result = await response.json();
-                console.log('result:', result);
                 setHomePageContent(result);
                 setIsLoading(false);
             } catch (error) {
@@ -75,7 +114,15 @@ const Canvas = ({ jsonData }) => {
     return (
         <div className={styles.canvas}>
             <h3>Canvas Area</h3>
-            {jsonData.children.map((node, index) => <Renderer key={index} node={node} data={homePageContent} />)}
+            {jsonData.children.map((node, index) => (
+                <Renderer
+                    key={index}
+                    node={node}
+                    data={homePageContent}
+                    onSelect={handleSelect}  // Pass the selection handler to Renderer
+                    selectedUid={selectedUid}  // Pass the currently selected UID
+                />
+            ))}
         </div>
     );
 };
