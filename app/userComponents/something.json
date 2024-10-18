@@ -6,16 +6,19 @@
       "type": "container",
       "uid": 2,
       "styles": {
+        "display": "flex",
+        "flexWrap": "wrap",
         "padding": "2rem",
         "textAlign": "center",
         "backgroundColor": "var(--background)",
-        "display": "flex",
         "flexDirection": "column",
         "gap": "4rem",
         "color": "var(--foreground)",
         "alignItems": "center",
         "justifyContent": "center",
-        "margin": "0 auto"
+        "margin": "0 auto",
+        "overflow": "hidden",
+        "boxSizing": "border-box"
       },
       "children": [
         {
@@ -33,6 +36,7 @@
               },
               "styles": {
                 "maxWidth": "60rem",
+                "width": "100%",
                 "height": "auto",
                 "marginBottom": "1rem"
               }
@@ -231,6 +235,7 @@
           "uid": 21,
           "styles": {
             "display": "flex",
+            "flexWrap": "wrap",
             "flexDirection": "row",
             "marginBottom": "4rem",
             "justifyContent": "center",
