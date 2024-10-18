@@ -27,47 +27,53 @@ const RightSidebar = ({ onChange, selectedStyles, onSave }) => {
     return (
         <div className={styles.sidebar}>
             <h3>Design & Data</h3>
-            <label>
-                Background color:
+
+            <div className={styles.inputGroup}>
+                <label>Background color:</label>
                 <input
                     type="text"
                     value={backgroundColor}
                     onChange={(e) => handleChange(e, setBackgroundColor, 'backgroundColor')}
                 />
-            </label>
-            <label>
-                Text color:
+            </div>
+
+            <div className={styles.inputGroup}>
+                <label>Text color:</label>
                 <input
                     type="text"
                     value={color}
                     onChange={(e) => handleChange(e, setColor, 'color')}
                 />
-            </label>
-            <label>
-                Height:
+            </div>
+
+            <div className={styles.inputGroup}>
+                <label>Height:</label>
                 <input
                     type="text"
                     value={height}
                     onChange={(e) => handleChange(e, setHeight, 'height')}
                 />
-            </label>
-            <label>
-                Width:
+            </div>
+
+            <div className={styles.inputGroup}>
+                <label>Width:</label>
                 <input
                     type="text"
                     value={width}
                     onChange={(e) => handleChange(e, setWidth, 'width')}
                 />
-            </label>
-            <label>
-                Font size:
+            </div>
+
+            <div className={styles.inputGroup}>
+                <label>Font size:</label>
                 <input
                     type="text"
                     value={fontSize}
                     onChange={(e) => handleChange(e, setFontSize, 'fontSize')}
                 />
-            </label>
-            <button onClick={onSave}>Save</button>
+            </div>
+
+            <button className={styles.saveButton} onClick={onSave}>Save</button>
         </div>
     );
 };
