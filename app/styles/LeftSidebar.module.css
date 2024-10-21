@@ -1,0 +1,67 @@
+.sidebar {
+    width: 20%;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-right: 1px solid #ccc;
+    height: auto;
+    max-height: none;
+    overflow-y: visible;
+    color: #171717;
+}
+
+
+.sidebarTitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #171717;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar .componentItem {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.sidebar h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #171717;
+}
+
+.sidebar .componentPreview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+}
+
+.sidebar .componentPreview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+.sidebar .componentPreview button {
+    padding: 0.5rem 1rem;
+    background-color: #7c4dff;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.sidebar .componentPreview button:hover {
+    background-color: #5e35ff;
+}

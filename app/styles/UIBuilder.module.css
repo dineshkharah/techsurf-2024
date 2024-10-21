@@ -1,0 +1,5 @@
+.uiBuilderContainer {
+    display: flex;
+    min-height: 100vh;
+    height: auto;
+}

@@ -1,0 +1,403 @@
+{
+  "type": "page",
+  "uid": 1,
+  "children": [
+    {
+      "type": "container",
+      "uid": 2,
+      "styles": {
+        "padding": "2rem",
+        "textAlign": "center",
+        "backgroundColor": "var(--background)",
+        "display": "flex",
+        "flexDirection": "column",
+        "gap": "4rem",
+        "color": "var(--foreground)",
+        "alignItems": "center",
+        "justifyContent": "center",
+        "margin": "0 auto"
+      },
+      "children": [
+        {
+          "type": "container",
+          "uid": 3,
+          "styles": {
+            "textAlign": "center"
+          },
+          "children": [
+            {
+              "type": "image",
+              "uid": 4,
+              "props": {
+                "src": "entry.components[0].teaser.image[0].image.url"
+              },
+              "styles": {
+                "maxWidth": "60rem",
+                "height": "auto",
+                "marginBottom": "1rem"
+              }
+            },
+            {
+              "type": "container",
+              "uid": 5,
+              "styles": {
+                "textAlign": "center"
+              },
+              "children": [
+                {
+                  "type": "heading",
+                  "uid": 6,
+                  "props": {
+                    "text": "entry.components[0].teaser.heading"
+                  },
+                  "styles": {
+                    "fontSize": "1.75rem",
+                    "marginBottom": "1rem"
+                  }
+                },
+                {
+                  "type": "text",
+                  "uid": 7,
+                  "props": {
+                    "text": "entry.components[0].teaser.content"
+                  },
+                  "styles": {
+                    "marginBottom": "1rem"
+                  }
+                },
+                {
+                  "type": "button",
+                  "uid": 8,
+                  "props": {
+                    "text": "entry.components[0].teaser.cta[0].text",
+                    "link": "entry.components[0].teaser.cta[0].external_url"
+                  },
+                  "styles": {
+                    "color": "var(--accent)",
+                    "textDecoration": "underline",
+                    "transition": "color 0.3s ease"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "container",
+          "uid": 9,
+          "styles": {
+            "marginBottom": "2rem"
+          },
+          "children": [
+            {
+              "type": "heading",
+              "uid": 10,
+              "props": {
+                "text": "entry.components[1].card_collection.header.heading"
+              },
+              "styles": {
+                "fontSize": "2rem",
+                "marginBottom": "1rem"
+              }
+            },
+            {
+              "type": "text",
+              "uid": 11,
+              "props": {
+                "text": "entry.components[1].card_collection.header.sub_heading"
+              },
+              "styles": {
+                "fontSize": "1.2rem",
+                "color": "var(--secondary-color)"
+              }
+            },
+            {
+              "type": "container",
+              "uid": 12,
+              "styles": {
+                "display": "flex",
+                "flexDirection": "row",
+                "justifyContent": "center",
+                "flexWrap": "wrap",
+                "gap": "2rem"
+              },
+              "children": [
+                {
+                  "type": "container",
+                  "uid": 13,
+                  "styles": {
+                    "backgroundColor": "var(--foreground)",
+                    "color": "var(--background)",
+                    "borderRadius": "1rem",
+                    "padding": "1.5rem",
+                    "width": "20rem",
+                    "textAlign": "center",
+                    "transition": "box-shadow 0.3s ease"
+                  },
+                  "children": [
+                    {
+                      "type": "image",
+                      "uid": 14,
+                      "props": {
+                        "src": "entry.components[1].card_collection.cards[0].image.url"
+                      },
+                      "styles": {
+                        "width": "100%",
+                        "borderRadius": "1rem",
+                        "marginBottom": "1rem"
+                      }
+                    },
+                    {
+                      "type": "heading",
+                      "uid": 15,
+                      "props": {
+                        "text": "entry.components[1].card_collection.cards[0].title"
+                      },
+                      "styles": {
+                        "fontSize": "1.5rem",
+                        "marginBottom": "1rem"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "uid": 16,
+                      "props": {
+                        "text": "entry.components[1].card_collection.cards[0].subtitle"
+                      },
+                      "styles": {
+                        "fontSize": "1rem",
+                        "marginBottom": "1rem"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "container",
+                  "uid": 17,
+                  "styles": {
+                    "backgroundColor": "var(--foreground)",
+                    "color": "var(--background)",
+                    "borderRadius": "1rem",
+                    "padding": "1.5rem",
+                    "width": "20rem",
+                    "textAlign": "center",
+                    "transition": "box-shadow 0.3s ease"
+                  },
+                  "children": [
+                    {
+                      "type": "image",
+                      "uid": 18,
+                      "props": {
+                        "src": "entry.components[1].card_collection.cards[1].image.url"
+                      },
+                      "styles": {
+                        "width": "100%",
+                        "borderRadius": "1rem",
+                        "marginBottom": "1rem"
+                      }
+                    },
+                    {
+                      "type": "heading",
+                      "uid": 19,
+                      "props": {
+                        "text": "entry.components[1].card_collection.cards[1].title"
+                      },
+                      "styles": {
+                        "fontSize": "1.5rem",
+                        "marginBottom": "1rem"
+                      }
+                    },
+                    {
+                      "type": "text",
+                      "uid": 20,
+                      "props": {
+                        "text": "entry.components[1].card_collection.cards[1].subtitle"
+                      },
+                      "styles": {
+                        "fontSize": "1rem",
+                        "marginBottom": "1rem"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "container",
+          "uid": 21,
+          "styles": {
+            "display": "flex",
+            "flexDirection": "row",
+            "marginBottom": "4rem",
+            "justifyContent": "center",
+            "margin": "0 auto",
+            "color": "black",
+            "gap": "2rem"
+          },
+          "children": [
+            {
+              "type": "container",
+              "uid": 22,
+              "styles": {
+                "backgroundColor": "white",
+                "borderRadius": "10px",
+                "padding": "2rem",
+                "width": "20rem",
+                "boxShadow": "0 5px 15px rgba(0, 0, 0, 0.1)",
+                "transition": "transform 0.3s ease, box-shadow 0.3s ease",
+                "display": "flex",
+                "flexDirection": "column",
+                "alignItems": "center"
+              },
+              "children": [
+                {
+                  "type": "image",
+                  "uid": 23,
+                  "props": {
+                    "src": "entry.components[2].text_and_image.image.url"
+                  },
+                  "styles": {
+                    "maxWidth": "100%",
+                    "height": "auto",
+                    "borderRadius": "10px",
+                    "marginBottom": "1rem"
+                  }
+                },
+                {
+                  "type": "heading",
+                  "uid": 24,
+                  "props": {
+                    "text": "entry.components[2].text_and_image.heading"
+                  },
+                  "styles": {
+                    "fontSize": "1.8rem",
+                    "marginBottom": "1rem"
+                  }
+                },
+                {
+                  "type": "text",
+                  "uid": 25,
+                  "props": {
+                    "text": "entry.components[2].text_and_image.content"
+                  },
+                  "styles": {
+                    "fontSize": "1.1rem",
+                    "lineHeight": "1.6"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "container",
+              "uid": 26,
+              "styles": {
+                "backgroundColor": "white",
+                "borderRadius": "10px",
+                "padding": "2rem",
+                "width": "20rem",
+                "boxShadow": "0 5px 15px rgba(0, 0, 0, 0.1)",
+                "transition": "transform 0.3s ease, box-shadow 0.3s ease",
+                "display": "flex",
+                "flexDirection": "column",
+                "alignItems": "center"
+              },
+              "children": [
+                {
+                  "type": "image",
+                  "uid": 27,
+                  "props": {
+                    "src": "entry.components[3].text_and_image.image.url"
+                  },
+                  "styles": {
+                    "maxWidth": "100%",
+                    "height": "auto",
+                    "borderRadius": "10px",
+                    "marginBottom": "1rem"
+                  }
+                },
+                {
+                  "type": "heading",
+                  "uid": 28,
+                  "props": {
+                    "text": "entry.components[3].text_and_image.heading"
+                  },
+                  "styles": {
+                    "fontSize": "1.8rem",
+                    "marginBottom": "1rem"
+                  }
+                },
+                {
+                  "type": "text",
+                  "uid": 29,
+                  "props": {
+                    "text": "entry.components[3].text_and_image.content"
+                  },
+                  "styles": {
+                    "fontSize": "1.1rem",
+                    "lineHeight": "1.6"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "container",
+              "uid": 30,
+              "styles": {
+                "backgroundColor": "white",
+                "borderRadius": "10px",
+                "padding": "2rem",
+                "width": "20rem",
+                "boxShadow": "0 5px 15px rgba(0, 0, 0, 0.1)",
+                "transition": "transform 0.3s ease, box-shadow 0.3s ease",
+                "display": "flex",
+                "flexDirection": "column",
+                "alignItems": "center"
+              },
+              "children": [
+                {
+                  "type": "image",
+                  "uid": 31,
+                  "props": {
+                    "src": "entry.components[4].text_and_image.image.url"
+                  },
+                  "styles": {
+                    "maxWidth": "100%",
+                    "height": "auto",
+                    "borderRadius": "10px",
+                    "marginBottom": "1rem"
+                  }
+                },
+                {
+                  "type": "heading",
+                  "uid": 32,
+                  "props": {
+                    "text": "entry.components[4].text_and_image.heading"
+                  },
+                  "styles": {
+                    "fontSize": "1.8rem",
+                    "marginBottom": "1rem"
+                  }
+                },
+                {
+                  "type": "text",
+                  "uid": 33,
+                  "props": {
+                    "text": "entry.components[4].text_and_image.content"
+                  },
+                  "styles": {
+                    "fontSize": "1.1rem",
+                    "lineHeight": "1.6"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

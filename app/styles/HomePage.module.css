@@ -8,11 +8,11 @@
     gap: 3rem;
 }
 
-.homepage h1 {
+/* .homepage h1 {
     font-size: 3rem;
     color: var(--foreground);
     margin-bottom: 2rem;
-}
+} */
 
 
 
@@ -22,7 +22,7 @@
 }
 
 .teaser img {
-    max-width: 75%;
+    max-width: 60rem;
     height: auto;
     margin-bottom: 1rem;
 }
@@ -55,7 +55,6 @@
 .cardCollectionSection {
     display: flex;
     flex-direction: column;
-    /* This will stack the card collections vertically */
     gap: 2rem;
     margin-bottom: 4rem;
 }

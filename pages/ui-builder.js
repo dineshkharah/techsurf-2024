@@ -14,8 +14,8 @@ const UIBuilder = () => {
 
     const handleComponentSelection = (uid, styles, component) => {
         setSelectedComponentUid(uid);
-        setSelectedComponentStyles(styles);  // Set the styles of the selected component
-        setSelectedComponent(component); // Set the selected component data
+        setSelectedComponentStyles(styles);
+        setSelectedComponent(component);
     };
 
     const handleStyleChange = (newStyles) => {
@@ -45,7 +45,7 @@ const UIBuilder = () => {
             <RightSidebar
                 onChange={handleStyleChange}
                 selectedStyles={selectedComponentStyles}
-                selectedComponent={selectedComponent} // Passing the selected component to RightSidebar
+                selectedComponent={selectedComponent}
             />
         </div>
     );

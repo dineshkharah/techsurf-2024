@@ -1,0 +1,12 @@
+.canvas {
+    flex: 1;
+    background-color: #fff;
+    padding: 2rem;
+    min-height: auto;
+    max-height: none;
+    overflow-y: auto;
+    color: #171717;
+    width: 100%;
+    max-width: 80vw;
+    transition: all 0.3s ease;
+}
