@@ -3,17 +3,19 @@ import LeftSidebar from '../app/components/LeftSidebar';
 import Canvas from '../app/components/Canvas';
 import RightSidebar from '../app/components/RightSidebar';
 import styles from '../app/styles/UIBuilder.module.css';
-import jsonData from '../app/userComponents/something.json'; // Importing JSON data
+import jsonData from '../app/userComponents/something.json';
 
 const UIBuilder = () => {
     const components = ['Teaser', 'Card Collection', 'Text And Image', 'Featured Articles'];
     const [selectedComponentUid, setSelectedComponentUid] = useState(null);
     const [componentsData, setComponentsData] = useState(jsonData);
     const [selectedComponentStyles, setSelectedComponentStyles] = useState({});
+    const [selectedComponent, setSelectedComponent] = useState(null);
 
-    const handleComponentSelection = (uid, styles) => {
+    const handleComponentSelection = (uid, styles, component) => {
         setSelectedComponentUid(uid);
         setSelectedComponentStyles(styles);  // Set the styles of the selected component
+        setSelectedComponent(component); // Set the selected component data
     };
 
     const handleStyleChange = (newStyles) => {
@@ -21,7 +23,8 @@ const UIBuilder = () => {
 
         const updateStyles = (node) => {
             if (node.uid === selectedComponentUid) {
-                node.styles = { ...node.styles, ...newStyles };
+                node.styles = { ...node.styles, ...newStyles.styles };
+                node.props = { ...node.props, ...newStyles.props };
             }
             if (node.children) {
                 node.children.forEach(updateStyles);
@@ -32,24 +35,17 @@ const UIBuilder = () => {
         setComponentsData(updatedData);
     };
 
-    // Function to trigger download of JSON file with updated data
-    const saveJsonFile = () => {
-        const updatedJson = JSON.stringify(componentsData, null, 2);
-        const blob = new Blob([updatedJson], { type: 'application/json' });
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = 'updatedComponentsData.json';
-        link.click();
-    };
-
     return (
         <div className={styles.uiBuilderContainer}>
             <LeftSidebar components={components} />
-            <Canvas jsonData={componentsData} onComponentSelect={handleComponentSelection} />
+            <Canvas
+                jsonData={componentsData}
+                onComponentSelect={(uid, styles, component) => handleComponentSelection(uid, styles, component)}
+            />
             <RightSidebar
                 onChange={handleStyleChange}
                 selectedStyles={selectedComponentStyles}
-                onSave={saveJsonFile}
+                selectedComponent={selectedComponent} // Passing the selected component to RightSidebar
             />
         </div>
     );

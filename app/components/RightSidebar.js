@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/RightSidebar.module.css';
 
-const RightSidebar = ({ onChange, selectedStyles, onSave }) => {
+const RightSidebar = ({ onChange, selectedStyles, selectedComponent }) => {
     const [backgroundColor, setBackgroundColor] = useState('');
     const [color, setColor] = useState('');
     const [height, setHeight] = useState('');
     const [width, setWidth] = useState('');
     const [fontSize, setFontSize] = useState('');
+    const [dataFields, setDataFields] = useState({});
 
     // Populate form inputs with selected component's styles when component is clicked
     useEffect(() => {
@@ -17,16 +18,26 @@ const RightSidebar = ({ onChange, selectedStyles, onSave }) => {
             setWidth(selectedStyles.width || '');
             setFontSize(selectedStyles.fontSize || '');
         }
-    }, [selectedStyles]);
+        if (selectedComponent) {
+            // Pre-populate the data fields if any props are available for the selected component
+            setDataFields(selectedComponent.props || {});
+        }
+    }, [selectedStyles, selectedComponent]);
 
     const handleChange = (e, setState, key) => {
         setState(e.target.value);
         onChange({ [key]: e.target.value });
     };
 
+    const handleDataFieldChange = (e, field) => {
+        const updatedFields = { ...dataFields, [field]: e.target.value };
+        setDataFields(updatedFields);
+        onChange({ props: updatedFields }); // Passing the updated data to the parent component
+    };
+
     return (
         <div className={styles.sidebar}>
-            <h3>Design & Data</h3>
+            <h3>Design Tab</h3>
 
             <div className={styles.inputGroup}>
                 <label>Background color:</label>
@@ -73,7 +84,22 @@ const RightSidebar = ({ onChange, selectedStyles, onSave }) => {
                 />
             </div>
 
-            <button className={styles.saveButton} onClick={onSave}>Save</button>
+            <h3>Data Tab</h3>
+            <div className={styles.dataTab}>
+                <label>Component Data Fields:</label>
+
+                {/* Dynamically generate input fields based on the selected component's props */}
+                {selectedComponent && selectedComponent.props && Object.keys(selectedComponent.props).map((propKey) => (
+                    <div key={propKey} className={styles.inputGroup}>
+                        <label>{propKey}:</label>
+                        <input
+                            type="text"
+                            value={dataFields[propKey] || ''}
+                            onChange={(e) => handleDataFieldChange(e, propKey)}
+                        />
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

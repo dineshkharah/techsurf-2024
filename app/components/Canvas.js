@@ -22,7 +22,6 @@ const Renderer = ({ node, data, onSelect, selectedUid }) => {
         onSelect(uid, styles);
     };
 
-    // Avoid wrapping in a div for specific types like 'container'
     if (type === 'container') {
         return (
             <div
@@ -78,11 +77,24 @@ const processData = (props, data) => {
 const Canvas = ({ jsonData, onComponentSelect }) => {
     const [homePageContent, setHomePageContent] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
-    const [selectedUid, setSelectedUid] = useState(null);  // State to store selected component UID
+    const [selectedUid, setSelectedUid] = useState(null);
 
     const handleSelect = (uid, styles) => {
-        setSelectedUid(uid);  // Update the selected component UID
-        onComponentSelect(uid, styles);  // Pass UID and component styles to the right sidebar
+        const findComponent = (node) => {
+            if (node.uid === uid) {
+                return node;
+            }
+            if (node.children) {
+                for (const child of node.children) {
+                    const found = findComponent(child);
+                    if (found) return found;
+                }
+            }
+            return null;
+        };
+        const selectedNode = findComponent(jsonData); // Find the selected component from JSON
+        setSelectedUid(uid);
+        onComponentSelect(uid, styles, selectedNode);  // Pass selectedNode as well to include all its data (props, styles)
     };
 
     useEffect(() => {
