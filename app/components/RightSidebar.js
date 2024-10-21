@@ -9,7 +9,6 @@ const RightSidebar = ({ onChange, selectedStyles, selectedComponent }) => {
     const [fontSize, setFontSize] = useState('');
     const [dataFields, setDataFields] = useState({});
 
-    // Populate form inputs with selected component's styles when component is clicked
     useEffect(() => {
         if (selectedStyles) {
             setBackgroundColor(selectedStyles.backgroundColor || '');
@@ -19,20 +18,23 @@ const RightSidebar = ({ onChange, selectedStyles, selectedComponent }) => {
             setFontSize(selectedStyles.fontSize || '');
         }
         if (selectedComponent) {
-            // Pre-populate the data fields if any props are available for the selected component
             setDataFields(selectedComponent.props || {});
         }
     }, [selectedStyles, selectedComponent]);
 
     const handleChange = (e, setState, key) => {
         setState(e.target.value);
-        onChange({ [key]: e.target.value });
+        const updatedStyles = {
+            ...selectedStyles,
+            [key]: e.target.value
+        };
+        onChange({ styles: updatedStyles });
     };
 
     const handleDataFieldChange = (e, field) => {
         const updatedFields = { ...dataFields, [field]: e.target.value };
         setDataFields(updatedFields);
-        onChange({ props: updatedFields }); // Passing the updated data to the parent component
+        onChange({ props: updatedFields });
     };
 
     return (
@@ -88,7 +90,6 @@ const RightSidebar = ({ onChange, selectedStyles, selectedComponent }) => {
             <div className={styles.dataTab}>
                 <label>Component Data Fields:</label>
 
-                {/* Dynamically generate input fields based on the selected component's props */}
                 {selectedComponent && selectedComponent.props && Object.keys(selectedComponent.props).map((propKey) => (
                     <div key={propKey} className={styles.inputGroup}>
                         <label>{propKey}:</label>
