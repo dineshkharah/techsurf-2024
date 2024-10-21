@@ -9,7 +9,6 @@ import styles from '../styles/HomePage.module.css';
 const HomePage = () => {
     const [homePageContent, setHomePageContent] = useState(null);
 
-    // Fetch home page content
     useEffect(() => {
         const fetchHomePageContent = async () => {
             try {
@@ -25,6 +24,7 @@ const HomePage = () => {
                 );
                 const result = await response.json();
                 setHomePageContent(result.entry);
+                console.log(result.entry);
             } catch (error) {
                 console.error('Error fetching content:', error);
             }
@@ -44,26 +44,37 @@ const HomePage = () => {
     return (
         <div className={styles.homepage}>
 
-            {/* Teasers */}
-            {teasers.length > 0 && <Teaser teaser={teasers[0].teaser} />}
+            {teasers.length > 0 && (
+                <Teaser
+                    image={teasers[0].teaser.image[0].image.url}
+                    heading={teasers[0].teaser.heading}
+                    content={teasers[0].teaser.content}
+                    link={teasers[0].teaser.cta[0].link ? teasers[0].teaser.cta[0].link[0].uid : "#"}
+                />
+            )}
 
-            {/* Card Collections */}
             {cardCollections.map((component, index) => (
-                <CardCollection key={index} cardCollection={component.card_collection} />
+                <CardCollection
+                    key={index}
+                    header={component.card_collection.header}
+                    cards={component.card_collection.cards}
+                />
             ))}
 
-            {/* Text and Image Section */}
             <div className={styles.textImageSection}>
                 <h2>Text and Image Section</h2>
                 <div className={styles.textImageGrid}>
                     {textAndImages.map((component, index) => (
-                        <TextAndImage key={index} textAndImage={component.text_and_image} />
+                        <TextAndImage
+                            key={index}
+                            image={component.text_and_image.image.url}
+                            heading={component.text_and_image.heading}
+                            content={component.text_and_image.content}
+                        />
                     ))}
                 </div>
             </div>
 
-            {/* Featured Articles */}
-            {featured_articles && <FeaturedArticles featuredArticles={featured_articles} />}
         </div>
     );
 };
